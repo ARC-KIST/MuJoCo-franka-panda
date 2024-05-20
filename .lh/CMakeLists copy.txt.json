@@ -1,0 +1,18 @@
+{
+    "sourceFile": "CMakeLists copy.txt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1691629136715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1691629136715,
+            "name": "Commit-0",
+            "content": "cmake_minimum_required(VERSION 3.15)\r\n\r\nproject(franka_panda LANGUAGES CXX CUDA)\r\n\r\n# set(POSITION_INDEPENDENT_CODE ON)\r\nset(CMAKE_CXX_STANDARD 17)\r\n\r\n\r\n# set(PYBIND11_CPP_STANDARD)\r\n# set (PYBIND11_PYTHON_VERSION \"3.8\")\r\nenable_language(CUDA)\r\n\r\nfind_package(Eigen3 3.3 REQUIRED)\r\nfind_package(CUDA REQUIRED)\r\nfind_package(OpenGL REQUIRED)\r\nfind_package(GLEW REQUIRED)\r\nfind_package(pybind11 REQUIRED)\r\n# find_package (X11)\r\n\r\nset(SRC_FILES\r\n    src/controller.cpp    \r\n    src/robotmodel.cpp\r\n    src/trajectory.cpp    \r\n)\r\n\r\n\r\n\r\nmessage(\"------------------------------------\")\r\n# include(\"${CMAKE_CURRENT_SOURCE_DIR}/../pybind11/tools/pybind11Common.cmake\")\r\ninclude_directories(\r\n    include\r\n    ${EIGEN3_INCLUDE_DIRS}\r\n    ${GLEW_INCLUDE_DIRS}\r\n    /usr/include/python3.8  # for pybind11\r\n    # /home/kist/anaconda3/envs/rl/include/python3.8\r\n    /usr/local/cuda-11.6\r\n    /usr/local/cuda\r\n    /usr/local/cuda/include\r\n    /usr/local/cuda/lib64\r\n)\r\n\r\nlink_directories(\r\n    /usr/include/python3.8\r\n    /usr/local/cuda/lib64\r\n)\r\nmessage(STATUS \"PYTHON ${PYTHON_VERSION}\")\r\nmessage(\"------------------------------------\")\r\n# for pybind11\r\nadd_library(controller_cu STATIC\r\n    src/cuda.cu\r\n)\r\n\r\nset_target_properties(controller_cu PROPERTIES \r\n    POSITION_INDEPENDENT_CODE ON\r\n    # CUDA_VISIBILITY_PRESET \"hidden\"\r\n    CUDA_SEPARABLE_COMPILATION ON\r\n)\r\n\r\n# set_property(TARGET controller_cu \r\n            #  PROPERTY CUDA_SEPARABLE_COMPILATION ON)\r\n\r\nadd_library(controller MODULE\r\n    ${SRC_FILES}\r\n    src/cuda.cu\r\n)\r\n\r\nset_target_properties(controller PROPERTIES \r\n    CXX_VISIBILITY_PRESET \"hidden\"\r\n    INTERPROCEDURAL_OPTIMIZATION TRUE\r\n    PREFIX \"${PYTHON_MODULE_PREFIX}\"\r\n    SUFFIX \"${PYTHON_MODULE_EXTENSION}\"\r\n)\r\n\r\ntarget_link_libraries(controller PRIVATE controller_cu)\r\n\r\ntarget_link_libraries(controller PRIVATE pybind11::module\r\n    -lrbdl\r\n    -lrbdl_urdfreader\r\n        -lpython3.8\r\n        Eigen3::Eigen\r\n    )"
+        }
+    ]
+}
