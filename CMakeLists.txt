@@ -66,9 +66,9 @@ ${MUJOCO_HOME}/bin/mujoco_plugin/libelasticity.so
 ${GLFW}
 -lqpOASES
 )
-add_executable(mppi ${COM_SRC})
+add_executable(run ${COM_SRC})
 #add_executable(${PROJECT_NAME} simulate/main.cc)
-target_link_libraries(mppi 
+target_link_libraries(run 
 	${COM_LIB} 
 	${CMAKE_DL_LIBS} 
 	${X11_LIBRARIES}
