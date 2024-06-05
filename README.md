@@ -34,4 +34,4 @@ $ ./run
 
 </br></br>
 ### Written by:
-- 240520: [S-CHOI-S](https://github.com/S-CHOI-S)
+- 240520: [Sol Choi](https://github.com/S-CHOI-S)
