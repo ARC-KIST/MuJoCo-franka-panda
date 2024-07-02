@@ -39,4 +39,4 @@ $ ./run
 
 </br></br>
 ### Written by:
-- 240520: [Sol Choi](https://github.com/S-CHOI-S)
+- 240702: [Sol Choi](https://github.com/S-CHOI-S)
