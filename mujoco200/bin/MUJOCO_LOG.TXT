@@ -1,0 +1,6 @@
+Thu Mar  3 17:49:30 2022
+ERROR: Expired activation key
+
+Thu Mar  3 17:50:21 2022
+ERROR: could not create window
+
