@@ -1,9 +1,0 @@
-Wed Jan 24 15:22:14 2024
-ERROR: could not create window
-
-Wed Jan 24 15:23:14 2024
-ERROR: could not create window
-
-Wed Jan 24 15:38:06 2024
-WARNING: Too many contacts. Either the arena memory is full, or nconmax is specified and is exceeded. Increase arena memory allocation, or increase/remove nconmax. (ncon = 100) Time = 1.1410.
-
