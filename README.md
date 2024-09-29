@@ -14,6 +14,8 @@ $ git clone https://github.com/ARC-KIST/MuJoCo-franka-panda.git franka-panda
 __Essential 2.__ Install Dependencies
 > RBDL, GLFW etc. should be installed!
 - [RBDL](https://github.com/rbdl/rbdl.git): C++ library that contains some essential and efficient rigid body dynamics algorithms.
+  > For this project, we use version 3.2.0!
+  
 - [GLFW](https://www.glfw.org/): GLFW (Graphics Library Framework) is a lightweight utility library for use with OpenGL.
   ```shell
   $ sudo apt-get install libglfw3-dev libglfw3
@@ -44,3 +46,4 @@ $ ./run
 ### Written by:
 - 240702: [Sol Choi](https://github.com/S-CHOI-S)
 - 240904: [Sol Choi](https://github.com/S-CHOI-S)
+- 240929: [Sol Choi](https://github.com/S-CHOI-S)
