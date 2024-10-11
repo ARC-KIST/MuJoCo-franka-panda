@@ -15,10 +15,11 @@ __Essential 2.__ Install Dependencies
 > RBDL, GLFW etc. should be installed!
 - [RBDL](https://github.com/rbdl/rbdl.git): C++ library that contains some essential and efficient rigid body dynamics algorithms.
   > For this project, we use version 3.2.0!
-  
+
+- [GLEW](https://github.com/nigels-com/glew.git): The OpenGL Extension Wrangler Library (GLEW) is a cross-platform open-source C/C++ extension loading library.
 - [GLFW](https://www.glfw.org/): GLFW (Graphics Library Framework) is a lightweight utility library for use with OpenGL.
   ```shell
-  $ sudo apt-get install libglfw3-dev libglfw3
+  $ sudo apt-get install libglew-dev libglfw3-dev libglfw3
   ```
 
 __Essential 3.__ Build the project
@@ -47,3 +48,4 @@ $ ./run
 - 240702: [Sol Choi](https://github.com/S-CHOI-S)
 - 240904: [Sol Choi](https://github.com/S-CHOI-S)
 - 240929: [Sol Choi](https://github.com/S-CHOI-S)
+- 241011: [Sol Choi](https://github.com/S-CHOI-S)
